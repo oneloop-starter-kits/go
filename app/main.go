@@ -19,11 +19,8 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	godotenv.Load(".env")
-	
 	oneloopSDKKey := os.Getenv("ONELOOP_SDK_KEY")
 	
-	fmt.Println("ONELOOP_SDK_KEY: ", oneloopSDKKey)
-
 	oneloopClient := client.NewClient(
 		option.WithToken(oneloopSDKKey),
 	)
